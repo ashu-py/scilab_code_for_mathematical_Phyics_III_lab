@@ -8,7 +8,7 @@ for i = 1:3
     s = sigma(i);
     delta_approx = (1/(sqrt(2*%pi*s^2)) * exp(-(x-2).^2/(2*s^2)));
     integrand = delta_approx .* (x + 3);
-    result = trapz(x, integrand);
+    result = inttrap(x, integrand);
     disp('sigma='+string(s)+' => integral = '+string(result));
     plot(x, delta_approx, colors(i));
 end
